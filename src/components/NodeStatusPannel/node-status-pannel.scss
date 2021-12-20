@@ -1,0 +1,25 @@
+@import "../../scss/common/variables";
+
+.node-status-pannel-container {
+  position: absolute;
+  z-index: 1;
+  // left: 60px;
+  width: 400px;
+  // border: 1px solid black;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s all ease-in;
+  @media (max-width: 1024px) {
+    bottom: 0;
+    height: 25%;
+    left: 0;
+    width: 100%;
+  }
+}
+
+.showpannel {
+  @media (max-width: 1024px) {
+    height: 65%;
+  }
+}

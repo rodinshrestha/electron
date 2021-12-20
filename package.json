@@ -1,0 +1,89 @@
+{
+  "name": "electron-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@electron/remote": "^1.0.2",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.2.4",
+    "@mui/material": "^5.2.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@turf/hex-grid": "^6.5.0",
+    "axios": "^0.24.0",
+    "bootstrap": "^5.0.0-beta1",
+    "electron-is-dev": "^1.2.0",
+    "electron-screenshot": "^1.0.5",
+    "filesize": "^8.0.6",
+    "framer-motion": "^4.1.17",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-country-flag": "^2.3.1",
+    "react-dom": "^17.0.1",
+    "react-geocode": "^0.2.3",
+    "react-icons": "^4.3.1",
+    "react-map-gl": "^5.3.17",
+    "react-map-gl-geocoder": "^2.2.0",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.1.1",
+    "react-scripts": "4.0.1",
+    "react-spinners": "^0.11.0",
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.1",
+    "unique-names-generator": "^4.6.0",
+    "web-vitals": "^0.2.4"
+  },
+  "main": "public/main.js",
+  "homepage": "./",
+  "scripts": {
+    "react-start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start": "concurrently -k \"cross-env BROWSER=none yarn react-start\" \"yarn electron:start\"",
+    "electron:build": "yarn build && electron-builder -c.extraMetadata.main=build/main.js",
+    "electron:start": "wait-on tcp:3000 && electron ."
+  },
+  "build": {
+    "extends": null,
+    "appId": "com.example.electron-cra",
+    "files": [
+      "dist/**/*",
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1",
+    "prettier": "^2.2.1",
+    "wait-on": "^5.2.1"
+  }
+}

@@ -1,0 +1,38 @@
+@import "../../../scss/common/variables";
+@import "../../../scss/common/global";
+.status-body-container {
+  padding: 10px 20px 20px;
+  overflow: auto;
+  @include scrollbars(10px, 10px, #2b2b2b, #2b2b2b);
+ 
+  .stats-body-items,.status-node-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .status-body-title {
+        font-family: $BOLD;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 10px;
+      }
+    .status-body-item,.status-node-item {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 15px;
+        gap: 15px;
+        padding: 15px 20px 25px;
+        border-radius: 10px;
+        // border: 1px solid black;
+        background-color: #1e1e1e;
+        color: #fff;
+      .title{
+        font-family: $ROMAN;
+        font-size: 16px;
+      }
+      .value{
+        font-family: $LIGHT;
+        font-size: 30px;
+      }
+    }
+  }
+}

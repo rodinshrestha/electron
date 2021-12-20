@@ -1,0 +1,106 @@
+@import "../../scss/common/variables";
+.map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  @media (max-width: 1024px) {
+    height: 100%;
+  }
+
+  .marker {
+    background-size: cover;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .online {
+    background-image: url("./active_icon.png");
+  }
+
+  .mapboxgl-popup-content {
+    padding: 0 !important;
+
+    button {
+      display: none;
+    }
+  }
+
+  .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+    border-bottom-color: #050f1c !important;
+    margin-top: 15px;
+  }
+  .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: #050f1c !important;
+  }
+  .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip{
+    border-top-color: #050f1c !important;
+  }
+  .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip{
+    border-top-color: #050f1c !important;
+  }
+
+  .node-popup {
+    display: flex;
+    flex-direction: column;
+    background-color: #050f1c;
+    min-width: 280px;
+    height: 190px;
+    border-radius: 5px;
+    color: white;
+
+    .node-popup-content {
+      padding: 20px;
+
+      .node-popup-status {
+        display: flex;
+        align-items: center;
+        font-family: $LIGHT;
+        font-size: 14px;
+        color: white;
+        .online {
+          background-image: url("./active_icon.png");
+          background-size: cover;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        div {
+          margin-left: 5px;
+        }
+      }
+
+      .node-popup-location {
+        display: flex;
+        align-items: center;
+        padding-top: 5px;
+        font-family: $LIGHT;
+        font-size: 14px;
+
+        img {
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+      }
+
+      .node-popup-name {
+        font-weight: bold;
+        font-size: 27px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        word-break: keep-all;
+        line-height: 1;
+        font-family: $BOLD;
+      }
+
+      .node-popup-type {
+        display: flex;
+        font-family: $LIGHT;
+        font-size: 14px;
+      }
+    }
+  }
+}
